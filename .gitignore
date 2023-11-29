@@ -1,0 +1,9 @@
+.env
+/cache
+/bin
+/build_info
+/doc
+/extensions
+/gems
+/plubins
+/specifications
