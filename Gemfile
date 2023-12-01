@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-gem 'open-uri'
 
 gem 'dotenv'
+gem 'numbers_in_words'
+gem 'open-uri'
 gem 'rubocop', '~> 1.58', require: false
