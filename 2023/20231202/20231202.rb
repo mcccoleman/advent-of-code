@@ -8,19 +8,13 @@ def games
   capture_data.split("\n")
 end
 
-def valid?(color_counts)
-  max_color_count = { 'red' => 12, 'green' => 13, 'blue' => 14 }
-
-  color_counts.each_key do |key|
-    return false if color_counts[key] > max_color_count[key]
-  end
-  true
+def multiply_color_values(color_counts)
+  color_counts.map { |option| option[1] }.reject(&:zero?).inject(:*)
 end
 
 def get_valid_game_ids
   possible_game_ids = []
   games.each do |game|
-    round_number = game.split(':')[0].split(' ')[1]
     rounds = game.split(':')[1].split(';')
 
     color_counts = { 'green' => 0, 'red' => 0, 'blue' => 0 }
@@ -34,7 +28,7 @@ def get_valid_game_ids
         color_counts[color] = number if color_counts[color] < number
       end
     end
-    possible_game_ids.push(round_number) if valid?(color_counts)
+    possible_game_ids.push(multiply_color_values(color_counts))
   end
   possible_game_ids
 end

@@ -3,3 +3,6 @@ Metrics/MethodLength:
 
 Metrics/AbcSize:
   Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
