@@ -33,7 +33,7 @@ def get_numbers(string)
 end
 
 def format_strings(data)
-  data.split("\n").map do |line|
+  data.map do |line|
     numbers = get_numbers(line)
     numbers[0] + numbers[numbers.length - 1]
   end
@@ -49,5 +49,4 @@ def runner
   sum_numbers(values)
 end
 
-print runner
-# print convert_word_to_number
+runner

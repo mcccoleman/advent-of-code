@@ -8,6 +8,13 @@ class GetData
     URI.open(
       "https://adventofcode.com/#{year_number}/day/#{day_number}/input",
       'Cookie' => ENV['COOKIE']
-    ).read
+    ).read.split("\n")
+  end
+
+  def self.get_current_day_values
+    URI.open(
+      "https://adventofcode.com/#{Time.now.year}/day/#{Time.now.day}/input",
+      'Cookie' => ENV['COOKIE']
+    ).read.split("\n")
   end
 end

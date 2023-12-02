@@ -1,11 +1,7 @@
 require './utils/get_data'
 
-def capture_data
-  GetData.get_daily_data(2023, 2)
-end
-
 def games
-  capture_data.split("\n")
+  GetData.get_current_day_values
 end
 
 def multiply_color_values(color_counts)
@@ -37,5 +33,3 @@ def runner
   valid_game_ids = get_valid_game_ids
   valid_game_ids.map(&:to_i).sum
 end
-
-print runner

@@ -2267,7 +2267,7 @@ response = "7532
 "
 
 describe GetData do
-    it 'makes a data request' do
-        expect(GetData.get_daily_data(2022,1)).to eq(response)
-    end
+  it 'makes a data request' do
+    expect(GetData.get_daily_data(2022, 1)).to eq(response.split("\n"))
+  end
 end
